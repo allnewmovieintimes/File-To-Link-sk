@@ -61,8 +61,8 @@ async def start(b, m):
             reply_markup=InlineKeyboardMarkup(
                 [
                     [InlineKeyboardButton("⚡ 𝚄𝙿𝙳𝙰𝚃𝙴𝚉 ⚡", url="https://t.me/beta_bot_updates"), InlineKeyboardButton("⚡ 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 ⚡", url="https://t.me/BETA_BOTSUPPORT")],
-                    [InlineKeyboardButton("🚶Developer", url="https://t.me/JP_Jeol_org"), InlineKeyboardButton("💠 Other Botz 💠", url="https://t.me/beta_bot_updates/157")],
-                    [InlineKeyboardButton("💌 About 💌", url="https://youtube.com/channel/UCf_dVNrilcT0V2R--HbYpMA")]
+                    [InlineKeyboardButton("𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛⚜️", url="https://t.me/JP_Jeol_org"), InlineKeyboardButton("💠 𝙾𝚝𝚑𝚎𝚛 𝙱𝚘𝚝𝚣 💠", url="https://t.me/beta_bot_updates/157")],
+                    [InlineKeyboardButton("💌 About 💌", callback_data="about")]
                 ]
             ),
             disable_web_page_preview=True
@@ -180,7 +180,7 @@ async def help_handler(bot, message):
             [
                 [InlineKeyboardButton("⚡ 𝚄𝙿𝙳𝙰𝚃𝙴𝚉 ⚡", url="https://t.me/beta_bot_updates"), InlineKeyboardButton("⚡ 𝚂𝚄𝙿𝙿𝙾𝚁𝚃 ⚡", url="https://t.me/BETA_BOTSUPPORT")],
                 [InlineKeyboardButton("𝙳𝚎𝚟𝚎𝚕𝚘𝚙𝚎𝚛⚜️", url="https://t.me/JP_Jeol_org"), InlineKeyboardButton("💠 𝙾𝚝𝚑𝚎𝚛 𝙱𝚘𝚝𝚣 💠", url="https://t.me/beta_bot_updates/157")],
-                [InlineKeyboardButton("💌 About 💌", url="")]
+                [InlineKeyboardButton("💌 About 💌", callback_data="about")]
             ]
         )
     )
@@ -249,3 +249,20 @@ async def about_handler(bot, message):
             ]
         )
     )
+
+
+@StreamBot.on_callback_query()
+async def callback_data(client, query: CallbackQuery):
+    data = query.data 
+    if data == "about":
+    await query.answer("""
+┣⪼<b>𝚂𝙴𝚁𝚅𝙴𝚁 : 𝙷𝙴𝚁𝚄𝙺𝙾</b>
+┣⪼<b>𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : 𝙿𝚁𝙾𝙶𝚁𝙰𝙼</b>
+┣⪼<b>𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 3</b>
+┣⪼<b>𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 : <a href='https://t.me/JP_Jeol_org'>𝙹𝚎𝚘𝚕</a></b>
+""", show_alert=True)
+
+
+
+
+
