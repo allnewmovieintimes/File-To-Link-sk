@@ -7,7 +7,7 @@ from Adarsh.bot.plugins.stream import MY_PASS
 from Adarsh.utils.human_readable import humanbytes
 from Adarsh.utils.database import Database
 from pyrogram import filters
-from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, CallbackQuery 
 from pyrogram.errors import UserNotParticipant
 from Adarsh.utils.file_properties import get_name, get_hash, get_media_file_size
 db = Database(Var.DATABASE_URL, Var.SESSION_NAME)
@@ -255,7 +255,7 @@ async def about_handler(bot, message):
 async def callback_data(client, query: CallbackQuery):
     data = query.data 
     if data == "about":
-        await query.answer("┣⪼<b>𝚂𝙴𝚁𝚅𝙴𝚁 : 𝙷𝙴𝚁𝚄𝙺𝙾</b>\n┣⪼<b>𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : 𝙿𝚁𝙾𝙶𝚁𝙰𝙼</b>\n┣⪼<b>𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 3</b>\n┣⪼<b>𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 : <a href='https://t.me/JP_Jeol_org'>𝙹𝚎𝚘𝚕</a></b>", show_alert=True)
+        await query.answer("┣⪼🚀 𝚂𝙴𝚁𝚅𝙴𝚁 : 𝙷𝙴𝚁𝚄𝙺𝙾\n┣🍀 𝙳𝙰𝚃𝙰𝙱𝙰𝚂𝙴 : 𝙼𝙾𝚃𝙾𝚁 𝙰𝚂𝚈𝙽𝙲𝙾\n┣⪼🗂️ 𝙻𝙸𝙱𝚁𝙰𝚁𝚈 : 𝙿𝚁𝙾𝙶𝚁𝙰𝙼\n┣⪼📃 𝙻𝙰𝙽𝙶𝚄𝙰𝙶𝙴: 𝙿𝚈𝚃𝙷𝙾𝙽 3\n┣⪼👨‍💻 𝙳𝙴𝚅𝙴𝙻𝙾𝙿𝙴𝚁 : 𝙹𝚎𝚘𝚕", show_alert=True)
 
 
 
